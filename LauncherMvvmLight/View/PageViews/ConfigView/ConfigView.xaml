@@ -1,0 +1,85 @@
+﻿<Page x:Class="LauncherMvvmLight.View.PageViews.ConfigView.Config"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+    xmlns:ConfigUC="clr-namespace:LauncherMvvmLight.View.PageViews.ConfigView.ConfigUC"
+    xmlns:command="http://www.galasoft.ch/mvvmlight"
+    DataContext="{Binding Config, Source={StaticResource Locator}}"
+    Title="ConfigView" VerticalAlignment="Top" HorizontalAlignment="Left"  >
+
+    <Grid x:Name="Define_Devices" Background="#FF3A80C7" Margin="10,0,10,10" Height="Auto" VerticalAlignment="Bottom" RenderTransformOrigin="0.755,0.233">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto"  />
+            <RowDefinition Height="Auto"  />
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblPageTitle" Content="Excalibur ConfigurationWizard" Margin="20,24,98,5" Grid.Column="0" FontSize="22" FontWeight="Bold" />
+        <Label x:Name="lblSelectedDevice" Content="{Binding LblSelectedDevice }" Margin="20,24,125,5" Grid.Column="1" FontSize="22" FontWeight="Bold"/>
+
+        <GroupBox x:Name="groupLstCards" Header="Select Card"  BorderThickness="3" Margin="20,0,10,30" Grid.Row="1" Grid.RowSpan="2" FontSize="16" FontWeight="Bold" >
+            <ListBox x:Name="lstCards"                  
+                ItemsSource="{Binding Path=DevicesConfigListDB}" 
+                SelectedItem="{Binding LstCardsSelectedItem}"
+                HorizontalAlignment="Left" Height="Auto" Margin="5" VerticalAlignment="Top" Width="300" RenderTransformOrigin="-0.45,-0.05" Grid.RowSpan="2"   Cursor="IBeam" Grid.Row="1" Background="Black">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock  Text="{Binding Path=DeviceTypeName , Mode=TwoWay }" FontSize="20" FontWeight="Bold" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True" >
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </Style.Triggers>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                            <!-- Background of selected item when focussed -->
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightCyan"/>
+                            <!-- Background of selected item when not focussed -->
+                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="LightGray" />
+                        </Style.Resources>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </GroupBox>
+
+        <!--<StackPanel x:Name="spConfigDetails" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+            <ConnectionConfigUC:UniqueIdentifierUCView Margin="5" >
+            </ConnectionConfigUC:UniqueIdentifierUCView>
+            <ConnectionConfigUC:ConnectionConfigUCView Margin="5" >
+            </ConnectionConfigUC:ConnectionConfigUCView>
+        </StackPanel>-->
+        <StackPanel x:Name="spConfigDetails" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+            <ConfigUC:UniqueIdentifierUCView Loaded="UniqueIdentifierUCView_Loaded"  />
+            <ConfigUC:ConnectionConfigUCView  />
+            <ConfigUC:EnableDebugTracesUCView />
+        </StackPanel>
+        
+        
+        
+        <Button x:Name="btnSave" Content="Save" Grid.Column="1" HorizontalAlignment="Left" Margin="173.5,10,0,10" Grid.Row="3" Width="75" 
+                 Command="{Binding SaveConfigCommand}"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="19,10,0,10" Grid.Row="3" Width="75" 
+                         Command="{Binding CancelConfigCommand}"/>
+        <!--<Label x:Name="lblSerialNumber" Content="Serial Number : " Grid.Column="1" HorizontalAlignment="Right" Margin="0,77.131,59,0" Grid.Row="2" VerticalAlignment="Top" Width="93" Height="27.733" />-->
+
+
+
+    </Grid>
+</Page>

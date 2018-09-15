@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="LauncherMvvmLight.View.PageViews.ConfigView.ConfigUC.UniqueIdentifierUCView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Name="UniqueIdentifierUc"
+             >
+
+
+    <Grid Margin="5" HorizontalAlignment="Center" >
+
+        <GroupBox x:Name="groupBoxUI" Grid.Column="1" Header="Unique Identifier / Socket Number"  BorderThickness="3" Margin="20,0,30,10" Grid.Row="1" >
+            <Grid HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,0.31" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50"  />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="tblkUniqIDInfo" HorizontalAlignment="Left"  
+                           TextWrapping="Wrap" Text="Product Specific..." VerticalAlignment="Top" Width="449" />
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+
+                    <Label x:Name="lblUniqueIdInfo" Grid.Row="1" Content="Unique ID : " HorizontalAlignment="Left" Margin="5" RenderTransformOrigin="0.139,0.385" Width="85"/>
+
+                    <ComboBox x:Name="cmbIdType"   Height="35" Margin="0,2" Width="160" 
+                              SelectedValue="{Binding CmbSelectedIdTypes, Mode=TwoWay}">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                <GradientStop Color="#FFD8D0D0" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                </StackPanel>
+                
+               
+            </Grid>
+        </GroupBox>
+
+        <!--ItemsSource = "{Binding Students}" 
+         ItemTemplate = "{StaticResource studentsTemplate}"-->
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,262 @@
+﻿<Page x:Class="LauncherMvvmLight.View.ShellViews.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:fileExportSettingsView="clr-namespace:LauncherMvvmLight.View.ShellViews.FileExportSettingsView"
+        xmlns:deviceDataView="clr-namespace:LauncherMvvmLight.View.ShellViews.DeviceDataView"
+        xmlns:ModuleDataView="clr-namespace:LauncherMvvmLight.View.ShellViews.ModuleDataView"
+        xmlns:readDataView="clr-namespace:LauncherMvvmLight.View.ShellViews.ReadDataView"
+        Title="{Binding WindowTitle}"
+        Height="800"
+        Width="1150">
+
+
+    <Page.DataContext>
+        <Binding Path="Shell" Source="{StaticResource Locator}"/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Blue" />
+            <Setter Property="FontSize" Value="10" />
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF3A80C7" Offset="0"/>
+                <GradientStop Color="#FF3A80C7" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <!--<RowDefinition Height="Auto"/>-->
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <GroupBox Grid.Row="0" Header="Config" Style="{StaticResource GroupBoxStyleOverride}" Margin="5,5,5,5">
+                <deviceDataView:DeviceDataGridView Margin="5" Loaded="DeviceDataGridView_Loaded_1" >
+                </deviceDataView:DeviceDataGridView>
+            </GroupBox>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+
+                </Grid.RowDefinitions>
+
+                <!--<deviceDataView:DeviceDataView Grid.Row="0" Margin="5">
+
+                </deviceDataView:DeviceDataView>-->
+
+                <!--<readDataView:ReadDataView Grid.Row="1" Grid.RowSpan="2" Margin="5"/>-->
+
+
+
+                <!--<comSettingsView:SerialPortSettingsView Grid.Row="2" Margin="5"/>-->
+                <GroupBox Grid.Row="0" Header="Modules" Style="{StaticResource GroupBoxStyleOverride}" Margin="5,5,5,5">
+
+                    <ModuleDataView:ModuleDataGridView Margin="5"  >
+                    </ModuleDataView:ModuleDataGridView>
+                    <!--<TabControl  TabStripPlacement="Top" >
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    -->
+                    <!--<Image Source="Resources/Images/bullet_blue.png" />-->
+                    <!--
+                                    <TextBlock Text="Local" Foreground="Blue" />
+
+
+
+
+                                </StackPanel>
+                            </TabItem.Header>
+                            <Grid Margin="20">
+                                <TextBlock Margin="15" TextWrapping="Wrap" Foreground="#FF555555" FontSize="15">
+                                <Bold>See Manuals</Bold>
+                                <LineBreak />User Manual.<Hyperlink Command="{Binding OpenLink}"><LineBreak />User Manual Link</Hyperlink>
+                                <LineBreak />SW Manual.<Hyperlink Command="{Binding OpenLink}"><LineBreak />SW Manual Link</Hyperlink>
+                                <LineBreak />Product web site.<Hyperlink Command="{Binding OpenLink}"><LineBreak />Product Web Link</Hyperlink>
+                                <LineBreak />
+
+                                </TextBlock>
+                            </Grid>
+
+                        </TabItem>
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    -->
+                    <!--<Image Source="/Resources/Images/bullet_red.png" />-->
+                    <!--
+                                    <TextBlock Text="Online" Foreground="Red" />
+                                </StackPanel>
+                            </TabItem.Header>
+                        </TabItem>
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    -->
+                    <!--<Image Source="/Resources/Images/bullet_green.png" />-->
+                    <!--
+                                    <TextBlock Text="Tutorials" Foreground="Green" />
+                                </StackPanel>
+                            </TabItem.Header>
+                        </TabItem>
+
+                    </TabControl>-->
+                </GroupBox>
+
+
+                <GroupBox Grid.Row="1" Header="About" Style="{StaticResource GroupBoxStyleOverride}" Margin="5">
+
+
+
+                    <TextBlock Margin="5" TextWrapping="Wrap" Foreground="White"  FontSize = "15" Height="90"><Bold>
+                        <Run Text="Excalibur System Ltd."/></Bold><Run Text=" "/>
+                        <LineBreak></LineBreak><Run Text="Established in 1986, manufactures hundreds of products for the avionic  industry. From connectors, cables, couplers and cards to sophisticated complete systems, our commitment to customer service is legendary."/>
+                  
+                    </TextBlock>
+
+
+
+                </GroupBox>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <GroupBox Header="Utils" Style="{StaticResource GroupBoxStyleOverride}" Margin="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label  Grid.Row="0" Content="Tools:" Width="90" Foreground="#FF555555"/>
+
+                            <Button Grid.Row="1" Grid.Column="0" Content="ShowHex" Command="{Binding ExcShowHexCommand}" Padding="10 3" Margin="5"
+                                        Foreground="Green" />
+                            <Button  Grid.Row="1" Grid.Column="1" Content="Merlin" Command="{Binding ExcMerlinCommand}" Padding="10 3" Margin="5"                                      
+                                        Foreground="Green"/>
+                            <Button  Grid.Row="1" Grid.Column="2" Content="Mystic" Command="{Binding ExcMysticCommand}" Padding="10 3" Margin="5"
+                                        Foreground="Green"/>
+                            <Button x:Name="btnExalt" Grid.Row="1" Grid.Column="3" Content="Exalt" Command="{Binding ExcExaltCommand}" Padding="10 3" Margin="5"
+                                                                       
+     
+                      
+
+                      
+                
+
+                                />
+
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+
+                <!--<fileExportSettingsView:FileExportSettingsView Grid.Row="1" Margin="5"/>-->
+                <Grid Grid.Row="1" Margin="5,5,5,5" VerticalAlignment="Top">
+
+
+                    <fileExportSettingsView:FileExportSettingsView Loaded="FileExportSettingsView_Loaded" Foreground="White"  />
+
+
+
+
+
+                </Grid>
+                <Grid Grid.Row="2" Margin="5,5,5,5" VerticalAlignment="Top">
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+                        <Image Source="/LauncherMvvmLight;component/Resources/images/logo.png" RenderTransformOrigin="0.5,0.5" Margin="0"/>
+                        <Button Command="{Binding ExcaliburCommand}" Style="{DynamicResource MaterialDesignToolButton}" ToolTip="Web Site" Margin="20,0" Height="50" Width="50" IsCancel="True" Background="#FF3A80C7">
+                            <Viewbox Width="48" Height="48" >
+                                <Canvas Height="30" Width="30">
+                                    <Path Data="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+                        <Button  Command="{Binding ExcaliburContact}" Style="{DynamicResource MaterialDesignToolButton}" ToolTip="Contact" Margin="20,0" Height="50" Width="50" IsCancel="True" Background="#FF3A80C7">
+                            <Viewbox Width="48" Height="48">
+                                <Canvas Height="30" Width="30" >
+                                    <Path Data="M12,15.36L4,10.36V18H20V10.36L12,15.36M4,8L12,13L20,8V8L12,3L4,8V8M22,8V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V8C2,7.27 2.39,6.64 2.97,6.29L12,0.64L21.03,6.29C21.61,6.64 22,7.27 22,8Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+                        <Button   Command="{Binding ExcaliburTech}" Style="{DynamicResource MaterialDesignToolButton}" ToolTip="Tech Support" Margin="20,0" Height="50" Width="50" IsCancel="True" Background="#FF3A80C7">
+                            <Viewbox Width="48" Height="48">
+                                <Canvas Height="30" Width="30" >
+                                    <Path Data="M19.79,15.41C20.74,13.24 20.74,10.75 19.79,8.59L17.05,9.83C17.65,11.21 17.65,12.78 17.06,14.17L19.79,15.41M15.42,4.21C13.25,3.26 10.76,3.26 8.59,4.21L9.83,6.94C11.22,6.35 12.79,6.35 14.18,6.95L15.42,4.21M4.21,8.58C3.26,10.76 3.26,13.24 4.21,15.42L6.95,14.17C6.35,12.79 6.35,11.21 6.95,9.82L4.21,8.58M8.59,19.79C10.76,20.74 13.25,20.74 15.42,19.78L14.18,17.05C12.8,17.65 11.22,17.65 9.84,17.06L8.59,19.79M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <!--<Grid Grid.Row="3" Margin="5">
+                    <GroupBox Header="ABOUT" Style="{StaticResource GroupBoxStyleOverride}">
+                        <TextBlock Margin="5" TextWrapping="Wrap" Foreground="#FF555555">
+                                <Bold>Excalibur System Ltd.</Bold> <Hyperlink Command="{Binding OpenLink}">Company website</Hyperlink>
+                        </TextBlock>
+                    </GroupBox>
+                </Grid>-->
+            </Grid>
+        </Grid>
+
+        <!--<DockPanel Grid.Row="2">-->
+        <!--<StatusBar Background="#FF578BC9" DockPanel.Dock="Bottom" Margin="5"
+                   Height="20">-->
+        <!--<StatusBarItem DockPanel.Dock="Right">
+                    <Slider x:Name="zoomSlider" Width="125"
+                        Minimum="1" Maximum="4"
+                        Value="1" />
+                </StatusBarItem>
+                <StatusBarItem DockPanel.Dock="Right" HorizontalContentAlignment="Right">
+                    <TextBlock Text="{Binding Zoom, Source={StaticResource LocStrings}}" />
+                </StatusBarItem>-->
+        <!--<StatusBarItem Margin="5 0 0 0" DockPanel.Dock="Left">
+                    <Hyperlink Command="{Binding OpenLink}">
+                        <InlineUIContainer>
+                            <TextBlock Style="{StaticResource HeaderStyleOverride}" Text="{Binding Company, Source={StaticResource LocStrings}}">
+                                -->
+        <!--<TextBlock.Style>
+                                    <Style>
+                                        <Setter Property="TextBlock.FontSize" Value="12" />
+                                    </Style>
+                                </TextBlock.Style>-->
+        <!--
+                            </TextBlock>
+                        </InlineUIContainer>
+                    </Hyperlink>
+                </StatusBarItem>-->
+        <!--</StatusBar>-->
+        <!--</DockPanel>-->
+
+    </Grid>
+</Page>

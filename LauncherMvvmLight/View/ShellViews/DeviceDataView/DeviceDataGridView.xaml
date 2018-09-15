@@ -1,0 +1,118 @@
+﻿<UserControl
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:convertors="clr-namespace:LauncherMvvmLight.Domain.Utils.Convertors"
+             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="LauncherMvvmLight.View.ShellViews.DeviceDataView.DeviceDataGridView"
+             mc:Ignorable="d"  
+             d:DesignHeight="280" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <convertors:DeviceStatusToTextDecorationsConverter x:Key="DeviceStatusToTextDecorationsConverter"/>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Path="DeviceDataGrid" Source="{StaticResource Locator}"/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="230"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <TextBlock  Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                     Text="Excalibur Devices" FontWeight="Bold" FontSize="30" FontStyle="Italic" Foreground="#FFFDFCFC" />
+
+            <Button x:Name="btnloadalldevices"  Grid.Column="1"  HorizontalAlignment="Center" Content="Refresh" Padding="10 3" Margin="5"
+                                        Foreground="Orange"
+               
+                 Command="{Binding SaveCommand }" />
+            <Button x:Name="btnsavealldevices" Grid.Column="2" HorizontalAlignment="Center" Content="Save To Registery" Padding="10 3" Margin="5"
+                                        Foreground="Orange"   
+                 Command="{Binding SaveCommand}" />
+
+        </Grid>
+
+        <!--<TextBlock HorizontalAlignment="Left" Margin="10,7,0,0" Grid.Row="1" 
+                   TextWrapping="Wrap" Text="DevName to Search:" VerticalAlignment="Top" 
+                   Width="231"/>-->
+        <!--<TextBox HorizontalAlignment="Left" Height="30" Margin="262,7,0,0" 
+                 Grid.Row="1" TextWrapping="Wrap"  Text="{Binding DevName, UpdateSourceTrigger=PropertyChanged}"
+                 VerticalAlignment="Top" Width="310">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="TextChanged">
+                    <mvvm:EventToCommand 
+                    Command="{Binding SearchCommand, Mode=OneWay}"
+                     />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>-->
+
+        <DataGrid x:Name="dgdev" Grid.Row="2" AutoGenerateColumns="False" SelectionUnit="FullRow" Background="LightBlue"
+                  ItemsSource="{Binding DevicesOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectionMode="Extended" CanUserAddRows="False" GridLinesVisibility="Horizontal" SelectionChanged="dgdev_SelectionChanged" 
+                  Loaded="OnUserControlLoaded" Unloaded="OnUserControlUnloaded">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <mvvm:EventToCommand Command="{Binding DgMouseDoubleClickCommand}" 
+                                         CommandParameter="{Binding SelectedItems, ElementName=dgdev}"
+                                         />
+                </i:EventTrigger>
+
+                <i:EventTrigger EventName="SelectionChanged">
+                    <mvvm:EventToCommand Command="{Binding DeviceHighLighedCommand}"       
+                                             CommandParameter="{Binding SelectedItems, ElementName=dgdev}"/>
+                </i:EventTrigger>
+
+            </i:Interaction.Triggers>
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Width ="*" Header="Device" Binding="{Binding dev}" />
+                <DataGridTextColumn Width ="Auto" Header="Card Type" Binding="{Binding strCardType}" />
+                <DataGridTextColumn Width ="*" Header="IP Adress" Binding="{Binding IPAdd}" />
+                <DataGridTextColumn Width ="*" Header="USB s/n" Binding="{Binding USBSN}" />
+                <DataGridTextColumn Width ="*" Header="Slot/ID" Binding="{Binding SlotID}" />
+                <DataGridTextColumn Width ="*" Header="User IRQ" Binding="{Binding cardType}" />
+                <DataGridTextColumn Width ="*" Header="IRQ" Binding="{Binding IRQ}" />
+                <DataGridTextColumn Width ="*" Header="Mem 1" Binding="{Binding Mem1}" />
+                <DataGridTextColumn Width ="*" Header="Men 2" Binding="{Binding Mem2}" />
+                <DataGridTextColumn Width ="*" Header="IO" Binding="{Binding IO}" />
+            </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}" >
+                    <Setter Property="Foreground" Value="{Binding Item.deviceStatus, Converter={StaticResource DeviceStatusToTextDecorationsConverter}, RelativeSource={RelativeSource Self}}" />
+                </Style>
+            </DataGrid.RowStyle>
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="Mouse">
+                    <mvvm:EventToCommand Command="{Binding Mode=OneWay, Path=LoadedCommand}"
+                            PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
+
+        </DataGrid>
+
+
+
+
+
+
+    </Grid>
+</UserControl>

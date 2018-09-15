@@ -1,0 +1,40 @@
+Type,DeviceStatus,DeviceName,DeviceAlias,DeviceFolder,DeviceDisplayConfig,DipConfig
+Device,active,Undefined,Undefined,Undefined,custom0,-1
+Device,active,664PCI, 664PCI,EXC-664PCIe Software Tools,custom1,17
+Device,active,EXC-664PCIe, 664PCI,EXC-664PCIe Software Tools,custom1,17
+Device,active,EthernetPCIe,EthernetPCIe ,EXC-ETHPCIe Software Tools,custom1,17
+Device,remove,miniPCIe Card,Undefined,Undefined,custom0,-1
+Device,remove,Express Card,Undefined,Undefined,custom0,-1
+Device,active,429PCMCIA/RTX,429PCMCIA,429RTx Software Tools,custom1,5
+Device,active,1553PCMCIA,1553PCMCIA,TBD,custom1,5
+Device,remove,1553PCMCIA/EP,Undefined,Undefined,custom0,0
+Device,active,1553PCMCIA/PX,1553PCMCIA/PX,TBD,custom1,5
+Device,active,1553PCMCIA/Px or /EP,1553PCMCIA/Px or /EP,TBD,custom1,5
+Device,active,EXC-2000PCI,2000PCI Series,modules,custom1,17
+Device,active,EXC-2000PCIe,2000PCI Series,modules,custom1,17
+Device,active,EXC-4000cPCI,4000PCI Series,modules,custom1,17
+Device,active,EXC-4000PCI/HC,4000PCI Series,modules,custom1,17
+Device,active,EXC-4000PCIe,4000PCI Series,modules,custom1,17
+Device,active,"EXC-4000PCIe64 ,",4000PCI Series,modules,custom1,17
+Device,active,EXC-4000P104plus,4000PCI Series,modules,custom1,17
+Device,active,1553PCI/MCH ,1553PCI/MCH ,MK41553MCH Software Tools,custom1,17
+Device,active,EXC-1553cPCI/MCH,4000PCI Series,MK41553MCH Software Tools,custom1,17
+Device,active,EXC-1553PMC/MCH,4000PCI Series,MK41553MCH Software Tools,custom1,17
+Device,active,EXC-1553ExCARD/Px,Express Card,1553Px Software Tools,custom1,0
+Device,active,EXC-1553mPCIe/Px,miniPCIe Card,1553Px Software Tools,custom1,4
+Device,active, EXC-1553PMC/Px ,4000PCI Series,1553Px Software Tools,custom1,17
+Device,active, DAS-429PMC/RTx ,4000PCI Series,429RTx Software Tools,custom1,17
+Device,active, DAS-429ExCARD/RTx ,Express Card,429RTx Software Tools,custom1,0
+Device,active, DAS-429mPCIe/RTx ,miniPCIe Card,429RTx Software Tools,custom1,4
+Device,active,EXC-708ccPMC,4000PCI Series,MK4708 Software Tools,custom1,17
+Device,active,EXC-DiscretePCI/Dx,4000PCI Series,MK4DiscreteIO Software Tools,custom1,17
+Device,active,EXC-4500ccVPX,Express Card,modules,custom1,0
+Device,active,EXC-1394PCI,1394PCI Series,EXC-1394PCI Software Tools,custom1,17
+Device,active,EXC-1394PCIe,1394PCI Series,EXC-1394PCI Software Tools,custom1,17
+Device,remove,3910PCI, 3910PCI ,Undefined,custom1,3
+Device,remove,EXC_BOARD_3910PCI,Undefined,Undefined,custom1,3
+Device,active,ES-1553RUNET/Px,ES-1553RUNET/Px,1553Px Software Tools,custom2,0
+Device,active,DAS-429UNET/RTx,DAS-429UNET/RTx,429RTx Software Tools,custom3,0
+Device,remove,ES-1553UNET/Px,ES-1553UNET/Px,Undefined,custom4,0
+Device,active, EXC-1553UNET/Px , EXC-1553UNET/Px ,1553Px Software Tools,custom4,0
+Device,active, EXC-9800MACC-II , EXC-9800MACC-II ,modules,custom5,0

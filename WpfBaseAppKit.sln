@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{C8C5AE54-09CD-4487-B40F-D62B194B1145}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unity", "Unity", "{D3B687AB-3E2B-4109-BBCC-3B8B5A923BAB}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\Unity\Microsoft.Practices.ObjectBuilder2.dll = Dependencies\Unity\Microsoft.Practices.ObjectBuilder2.dll
+		Dependencies\Unity\Microsoft.Practices.Unity.Configuration.dll = Dependencies\Unity\Microsoft.Practices.Unity.Configuration.dll
+		Dependencies\Unity\Microsoft.Practices.Unity.dll = Dependencies\Unity\Microsoft.Practices.Unity.dll
+		Dependencies\Unity\Microsoft.Practices.Unity.Interception.Configuration.dll = Dependencies\Unity\Microsoft.Practices.Unity.Interception.Configuration.dll
+		Dependencies\Unity\Microsoft.Practices.Unity.Interception.dll = Dependencies\Unity\Microsoft.Practices.Unity.Interception.dll
+		Dependencies\Unity\Microsoft.Practices.Unity.StaticFactory.dll = Dependencies\Unity\Microsoft.Practices.Unity.StaticFactory.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBaseAppKit.Framework", "WpfStarterKit.Framework\WpfBaseAppKit.Framework.csproj", "{1EB0C935-6FBC-4949-91A5-FB11A12FDC85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{DD906BF7-B95A-42F8-9EC0-FEC9557C0CB0}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\Util\System.Windows.Controls.Input.Toolkit.dll = Dependencies\Util\System.Windows.Controls.Input.Toolkit.dll
+		Dependencies\Util\System.Windows.Controls.Layout.Toolkit.dll = Dependencies\Util\System.Windows.Controls.Layout.Toolkit.dll
+		Dependencies\Util\WPFToolkit.dll = Dependencies\Util\WPFToolkit.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Excalibur", "Excalibur", "{6FC312B7-5B95-4AB3-9606-14631B6F33EA}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\Excalibur\devinfos.dll = Dependencies\Excalibur\devinfos.dll
+		Dependencies\Excalibur\Exc1553PxMs.dll = Dependencies\Excalibur\Exc1553PxMs.dll
+		Dependencies\Excalibur\Exc4000Ms.dll = Dependencies\Excalibur\Exc4000Ms.dll
+		Dependencies\Excalibur\Exc429RtxMs.dll = Dependencies\Excalibur\Exc429RtxMs.dll
+		Dependencies\Excalibur\ExcUnetMs.dll = Dependencies\Excalibur\ExcUnetMs.dll
+		Dependencies\Excalibur\frontdesk32.dll = Dependencies\Excalibur\frontdesk32.dll
+		Dependencies\Excalibur\stfuncs.dll = Dependencies\Excalibur\stfuncs.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M4Kdlls", "M4Kdlls", "{9D3B31B6-4C43-4A82-9C72-BA686BA3EEA5}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\Excalibur\M4Kdlls\Exc1553PxMs.dll = Dependencies\Excalibur\M4Kdlls\Exc1553PxMs.dll
+		Dependencies\Excalibur\M4Kdlls\Exc4000Ms.dll = Dependencies\Excalibur\M4Kdlls\Exc4000Ms.dll
+		Dependencies\Excalibur\M4Kdlls\Exc429RtxMs.dll = Dependencies\Excalibur\M4Kdlls\Exc429RtxMs.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBaseAppKit.ExcaliburLauncherApp", "WpfStarterKit.ExcaliburLauncherApp\WpfBaseAppKit.ExcaliburLauncherApp.csproj", "{353414C4-06B4-4722-AD34-02B5D4CE5BF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EB0C935-6FBC-4949-91A5-FB11A12FDC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB0C935-6FBC-4949-91A5-FB11A12FDC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB0C935-6FBC-4949-91A5-FB11A12FDC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB0C935-6FBC-4949-91A5-FB11A12FDC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{353414C4-06B4-4722-AD34-02B5D4CE5BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{353414C4-06B4-4722-AD34-02B5D4CE5BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{353414C4-06B4-4722-AD34-02B5D4CE5BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{353414C4-06B4-4722-AD34-02B5D4CE5BF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3B687AB-3E2B-4109-BBCC-3B8B5A923BAB} = {C8C5AE54-09CD-4487-B40F-D62B194B1145}
+		{DD906BF7-B95A-42F8-9EC0-FEC9557C0CB0} = {C8C5AE54-09CD-4487-B40F-D62B194B1145}
+		{6FC312B7-5B95-4AB3-9606-14631B6F33EA} = {C8C5AE54-09CD-4487-B40F-D62B194B1145}
+		{9D3B31B6-4C43-4A82-9C72-BA686BA3EEA5} = {6FC312B7-5B95-4AB3-9606-14631B6F33EA}
+	EndGlobalSection
+EndGlobal

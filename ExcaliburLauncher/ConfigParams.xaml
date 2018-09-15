@@ -1,0 +1,13 @@
+﻿<Window x:Name="ConfigParams" x:Class="ExcaliburLauncher.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcaliburLauncher"
+        mc:Ignorable="d"
+        Title="Config Devices
+        " Height="487" Width="598" Background="#FFD4F4FB">
+    <StackPanel HorizontalAlignment="Left" Height="400" Margin="16,16,0,0" VerticalAlignment="Top" Width="564">
+        <ListBox x:Name="lstCards" Height="375" Margin="0,0,429,0"/>
+    </StackPanel>
+</Window>
