@@ -19,7 +19,7 @@ namespace LauncherMvvmLight
 
         public Bootstrapper()
         {
-            Container = new UnityContainer();gdgdgdgffd
+            Container = new UnityContainer();
 
            
 
